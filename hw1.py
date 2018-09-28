@@ -55,10 +55,11 @@ def normalize(image):
                 min = j
             if j > max:
                 max = j
-    for i in image:
-        for j in i:
-            j = (255/(max-min))*(j-min)
+    for i in range(len(image)):
+        for j in range(len(image[i])):
+            image[i][j] = (255/(max-min))*(image[i][j]-min)
     return image
 
+print(normalize([[1,10],[2,3]]))
 def sigmoid_normalize(image):
     pass
